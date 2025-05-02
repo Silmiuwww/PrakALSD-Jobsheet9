@@ -67,6 +67,20 @@ public class StackTugasMahasiswa12 {
         return top + 1; 
     }
 
+    public String konversiDesimalKeBiner(int nilai) {
+        StackKonversi12 stack = new StackKonversi12();
+        while (nilai != 0) {
+            int sisa = nilai % 2;
+            stack.push(sisa);
+            nilai = nilai / 2;
+        }
+        String biner = "";
+        while (!stack.isEmpty()) {
+            biner += stack.pop();
+        }
+        return biner;
+    }
+
     public void print() {
         System.out.println("Nama\tNIM\tKelas");
         for (int i = 0; i <= top; i++) {
